@@ -28,15 +28,15 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
   displayName: Copy .apk files to artifact staging directory
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(build.artifactStagingDirectory)'
-    artifactName: 'drop'
+    path: '$(build.artifactStagingDirectory)'
+    artifact: 'drop'
   displayName: Publish artifacts
 
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    pathToPublish: '$(build.artifactStagingDirectory)'
-    artifactName: 'drop2'
+    path: '$(build.artifactStagingDirectory)'
+    artifact: 'drop2'
   displayName: Publish artifacts2
